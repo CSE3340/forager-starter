@@ -15,7 +15,8 @@ author:
 	@echo $(SID)
 	@echo $(EMAIL)
 	@echo $(SEMESTER)
+
 submit:
-	submit:
-	zip -r "submission_$(SEMESTER)_$(PROJECT)_$(SID)_$(NAME).zip" . -x "$(shell find . -type d -name 'node_modules' -exec echo {} \;)"
+submit:
+	git ls-files | zip -r "submission_$(SEMESTER)_$(PROJECT)_$(SID)_$(NAME).zip" -@
 	@echo "Submission zip file created: submission_$(SEMESTER)_$(PROJECT)_$(SID)_$(NAME).zip"
